@@ -1,10 +1,12 @@
 # tenor-fetch
 
-Inspired from [@giphy/js-fetch-api](https://www.npmjs.com/package/@giphy/js-fetch-api).
+A library that lets you access the Tenor API. What's Tenor? A GIF search engine. 
 
-I try my best to match the API. We have promises, but I can't promise you anything (haha).
+Rad?
 
-Regarding the source code, I'm a total noob and I just followed the instructions [here](https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package-44fe7164964c). Sorry.
+![Tenor in action](https://media1.tenor.com/images/c7504b9fb03c95b3b5687d744687e11c/tenor.gif)
+
+Yeah. Totally rad.
 
 Also, you should totally check out my rad start-up, [Tutturu.tv](https://tutturu.tv) 👏
 
@@ -53,3 +55,11 @@ Before you make a merge request, please:
 3. Add tests for your additions (if applicable)
 
 Thanks! 💖
+
+# Acknowledgements
+
+Inspired from [@giphy/js-fetch-api](https://www.npmjs.com/package/@giphy/js-fetch-api).
+
+I try my best to match the API. We have promises, but I can't promise you anything (haha).
+
+Regarding the source code, I'm a total noob and I just followed the instructions [here](https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package-44fe7164964c). Sorry.
