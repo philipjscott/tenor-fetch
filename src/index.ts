@@ -1,8 +1,8 @@
 const PRODUCTION_BASE_URL = 'https://api.tenor.com/v1';
 
-type ContentFilter = 'off' | 'low' | 'medium' | 'high';
+export type ContentFilter = 'off' | 'low' | 'medium' | 'high';
 
-type GifFormat =
+export type GifFormat =
   | 'gif'
   | 'mediumgif'
   | 'tinygif'
@@ -15,27 +15,27 @@ type GifFormat =
   | 'tinywebm'
   | 'nanowebm';
 
-type CategoryType = 'featured' | 'emoji' | 'trending';
+export type CategoryType = 'featured' | 'emoji' | 'trending';
 
-interface SearchResult {
+export interface SearchResult {
   next: string;
   results: Gif[];
 }
 
-type TrendingResult = SearchResult;
+export type TrendingResult = SearchResult;
 
-interface CategoryResult {
+export interface CategoryResult {
   tags: Tag[];
 }
 
-interface Media {
+export interface Media {
   preview: string;
   url: string;
   dims: number[];
   size: number;
 }
 
-interface Gif {
+export interface Gif {
   created: number;
   hasaudio: boolean;
   id: string;
@@ -48,67 +48,67 @@ interface Gif {
   url: string;
 }
 
-interface Tag {
+export interface Tag {
   searchterm: string;
   path: string;
   image: string;
   name: string;
 }
 
-interface SearchOptions {
-  locale: string;
-  media_filter: string;
-  ar_range: string;
-  contentfilter: ContentFilter;
-  limit: number;
-  pos: string;
-  anon_id: string;
+export interface SearchOptions {
+  locale?: string;
+  media_filter?: string;
+  ar_range?: string;
+  contentfilter?: ContentFilter;
+  limit?: number;
+  pos?: string;
+  anon_id?: string;
 }
 
-type TrendingOptions = SearchOptions;
+export type TrendingOptions = SearchOptions;
 
-interface CategoryOptions {
-  locale: string;
-  type: CategoryType;
-  contentfilter: ContentFilter;
-  anon_id: string;
+export interface CategoryOptions {
+  locale?: string;
+  type?: CategoryType;
+  contentfilter?: ContentFilter;
+  anon_id?: string;
 }
 
-interface SearchSuggestionsOptions {
-  locale: string;
-  limit: number;
-  anon_id: string;
+export interface SearchSuggestionsOptions {
+  locale?: string;
+  limit?: number;
+  anon_id?: string;
 }
 
-interface SearchSuggestionsResult {
+export interface SearchSuggestionsResult {
   results: string[];
 }
 
-type AutoCompleteOptions = SearchSuggestionsOptions;
-type AutoCompleteResult = SearchSuggestionsResult;
-type TrendingSearchTermsOptions = SearchSuggestionsOptions;
-type TrendingSearchTermsResult = SearchSuggestionsResult;
+export type AutoCompleteOptions = SearchSuggestionsOptions;
+export type AutoCompleteResult = SearchSuggestionsResult;
+export type TrendingSearchTermsOptions = SearchSuggestionsOptions;
+export type TrendingSearchTermsResult = SearchSuggestionsResult;
 
-interface RegisterShareOptions {
-  locale: string;
-  q: string;
-  anon_id: string;
+export interface RegisterShareOptions {
+  locale?: string;
+  q?: string;
+  anon_id?: string;
 }
 
-interface RegisterShareResult {
+export interface RegisterShareResult {
   status: string;
 }
 
-interface GifsOptions {
-  media_filter: string;
-  limit: number;
-  pos: string;
-  anon_id: string;
+export interface GifsOptions {
+  media_filter?: string;
+  limit?: number;
+  pos?: string;
+  anon_id?: string;
 }
 
-type GifsResult = SearchResult;
+export type GifsResult = SearchResult;
 
-interface AnonymousIDResult {
+export interface AnonymousIDResult {
   anon_id: string;
 }
 
