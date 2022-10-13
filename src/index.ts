@@ -28,19 +28,20 @@ export interface CategoryResult {
   tags: Tag[];
 }
 
-export interface Media {
-  preview: string;
-  url: string;
-  dims: number[];
-  size: number;
-}
+export type Media = {
+  [format in GifFormat]: {
+    preview: string;
+    url: string;
+    dims: number[];
+    size: number;
+  };
+};
 
 export interface Gif {
   created: number;
   hasaudio: boolean;
   id: string;
-  // https://github.com/microsoft/TypeScript/issues/24220
-  media: { [format in GifFormat]: Media };
+  media: Media[];
   tags: string[];
   title: string;
   itemurl: string;
@@ -120,7 +121,7 @@ export default class TenorFetch {
   }
 
   get(endpoint: string, ...params: object[]): Promise<any> {
-    const searchParams = new URLSearchParams(Object.assign({}, ...params)).toString();
+    const searchParams = new URLSearchParams(Object.assign({key: this.apiKey}, ...params)).toString();
     const url = `${this.baseURL}/${endpoint}?${searchParams}`;
     return fetch(url).then((resp) => resp.json());
   }
