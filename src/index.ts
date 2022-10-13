@@ -120,7 +120,7 @@ export default class TenorFetch {
   }
 
   get(endpoint: string, ...params: object[]): Promise<any> {
-    const searchParams = new URLSearchParams(Object.assign({}, ...params)).toString();
+    const searchParams = new URLSearchParams(Object.assign({key: this.apiKey}, ...params)).toString();
     const url = `${this.baseURL}/${endpoint}?${searchParams}`;
     return fetch(url).then((resp) => resp.json());
   }
